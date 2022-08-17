@@ -14,6 +14,7 @@ const md5 = require('md5');
 const nodemailer = require('nodemailer');
 const authifyMailer = require('./authifyMailer');
 const MusicStore = require('./models/music');
+const PlaylistStore = require('./models/playlist');
 
 
 setInterval(function () {
@@ -132,6 +133,54 @@ app.post('/music/new', [
 })
 
 
+// add new song
+app.post('/playlist/new', [
+    body('apiKey', 'Invalid key').isString(),
+    body('apiKey', 'Invalid key').isLength({ min: 32, max: 32 }),
+    body('playlistname', 'Enter a valid playlist name').isLength({ min: 1, max: 200 }),
+    body('category', 'Enter a valid category').isLength({ min: 1, max: 100 }),
+    body('url', 'Enter a valid link to song').isURL(),
+], async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+
+        console.log(errors)
+        return res.json({ message: errors.errors[0].msg })
+    }
+
+
+    const apikey = await KeyStore.findOne({ key: req.body.apiKey });
+
+    if (!apikey) {
+        return res.status(400).json({ message: "Invalid API key" });
+    }
+
+    const existingPlaylist = await PlaylistStore.findOne({ url: req.body.url });
+ 
+    if (existingPlaylist) {
+        return res.json({ message: "Playlist already exists" })
+    }
+
+    try {
+
+        let newPlayList = await PlaylistStore.create({
+            playlistname: req.body.playlistname,
+            category: req.body.category,
+            url: req.body.url,
+            username: apikey.userId,
+        })
+
+
+        res.status(200).json({ newPlayList, message: "Playlist Saved" });
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: error });
+    }
+})
+
+
 // get all music
 app.get('/music/all', async (req, res) => {
 
@@ -139,6 +188,20 @@ app.get('/music/all', async (req, res) => {
 
         let Songs = await MusicStore.find({});
         res.status(200).json({ Songs });
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: error });
+    }
+})
+
+
+app.get('/playlist/all', async (req, res) => {
+
+    try {
+
+        let Playlist = await PlaylistStore.find({});
+        res.status(200).json({ Playlist });
 
     } catch (error) {
         console.log(error);
@@ -178,6 +241,35 @@ app.get('/user/music', [
     }
 })
 
+app.get('/user/playlist', [
+    body('apiKey', 'Invalid key').isString(),
+    body('apiKey', 'Invalid key').isLength({ min: 32, max: 32 }),
+], async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+
+        console.log(errors)
+        return res.json({ message: errors.errors[0].msg })
+    }
+
+
+    const apikey = await KeyStore.findOne({ key: req.body.apiKey });
+
+    if (!apikey) {
+        return res.status(400).json({ message: "Invalid API key" });
+    }
+
+    try {
+        let playlist = await PlaylistStore.find({username : apikey.userId });
+        res.status(200).json({ playlist });
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: error });
+    }
+})
+
 
 // search song by category
 app.get('/music/category/:category', async (req, res) => {
@@ -198,6 +290,27 @@ app.get('/music/category/:category', async (req, res) => {
     }
 })
 
+
+// search song by category
+app.get('/playlist/category/:category', async (req, res) => {
+    if (!req.params.category) {
+        res.status(400).json({ message: "No results" });
+    }
+    try {
+
+        let Playlist = await PlaylistStore.find({ category: req.params.category });
+        if (Playlist.length === 0) {
+            return res.status(200).json({ message: "No Song Found" })
+        }
+        res.status(200).json({ Playlist });
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: error });
+    }
+})
+
+
 // search song by name
 app.get('/music/search/:query', async (req, res) => {
     if (!req.params.query) {
@@ -210,6 +323,26 @@ app.get('/music/search/:query', async (req, res) => {
             return res.status(400).json({ message: "No Song Found" })
         }
         res.status(200).json({ Songs });
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ message: error });
+    }
+})
+
+
+// search song by name
+app.get('/playlist/search/:query', async (req, res) => {
+    if (!req.params.query) {
+        return res.status(400).json({ message: "No results" });
+    }
+    try {
+        let Playlist = await PlaylistStore.find({ playlistname: req.params.query });
+
+        if (!Playlist.length === 0) {
+            return res.status(400).json({ message: "No Playlist Found" })
+        }
+        res.status(200).json({ Playlist });
 
     } catch (error) {
         console.log(error);
@@ -237,10 +370,11 @@ app.get('/music/artist/:query', async (req, res) => {
     }
 })
 
+app.get("/", (req,res)=>{
+    res.redirect('');
+})
 
 
 app.listen(process.env.PORT || port, () => {
     console.log(`Server started on  port ${port}`);
 })
-
-

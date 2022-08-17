@@ -1,0 +1,86 @@
+*{
+  word-wrap: anywhere !important;
+}
+tr {
+  border-top: 1px solid #c6cbd1;
+  background: #fff;
+}
+
+th,
+td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr:nth-child(2n) {
+  background: #f6f8fa;
+}
+
+pre div {
+  background-color: rgb(246, 248, 250) !important;
+}
+
+h1 {
+  font-weight: 650;
+  font-size: 3rem;
+  padding-bottom: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  padding-bottom: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-weight: 550;
+  font-size: 1.5rem;
+  padding-bottom: 0px;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-weight: 550;
+  font-size: 1.1rem;
+  padding-bottom: 0px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+.myContainer {
+  border: 3px solid rgba(0, 0, 0, 0.11);
+  padding: 2rem;
+  border-radius: 15px;
+}
+/* .mynav {
+  height: 110px;
+  padding: 10px;
+  width: 100% !important;
+  background-color: #e45853;
+  margin: 0px !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+td{
+ word-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .myContainer {
+    border: 0px solid rgba(0, 0, 0, 0.11);
+    padding: 1.5rem;
+  }
+}

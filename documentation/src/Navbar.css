@@ -1,0 +1,141 @@
+.my-profile-btn {
+  padding: 3px !important;
+  border: 0px solid #891204;
+  border-radius: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent !important;
+  color: #891204;
+  margin-left: 100px;
+}
+
+.my-profile-btn:hover {
+  background-color: #891204 !important;
+  color: white;
+}
+.my-profile-btn:active,
+.my-profile-btn:focus {
+  background-color: white !important;
+  color: #891204 !important;
+}
+
+@media (max-width: 765px) {
+  .my-profile-btn {
+    margin-left: 0px;
+  }
+}
+
+.nav-link :hover {
+  color: #891204 !important;
+}
+.nav-link {
+  /* color: #891204 !important; */
+  font-size: 1.1rem;
+}
+.mySocial:hover {
+  color: #891204 !important;
+}
+
+#hideMsg {
+  display: none;
+}
+#hideMsg1 {
+  display: none;
+}
+
+.navImg {
+  width: 40px;
+}
+
+.myBtn:hover {
+  border: 1px #891204 !important;
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  color: #891204;
+}
+.nav-item:hover {
+  border: 1px #891204 !important;
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  color: #891204;
+}
+.myBtn:focus-visible {
+    border: 1px #891204 !important;
+
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  transition: none !important;
+
+}
+.nav-item:focus-visible {
+    border: 1px #891204 !important;
+
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  transition: none !important;
+
+}
+.myBtn:active {
+    border: 1px #891204 !important;
+
+  color: #891204;
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  transition: none !important;
+
+}
+.nav-item:active {
+    border: 1px #891204 !important;
+
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  color: #891204;
+  transition: none !important;
+
+}
+.myBtn:focus {
+    border: 1px #891204 !important;
+
+  color: #891204;
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  transition: none !important;
+
+}
+.nav-item:focus {
+    border: 1px #891204 !important;
+
+  outline: 0px !important;
+  box-shadow: 0 0 0 0 !important;
+  color: #891204;
+  transition: none !important;
+}
+
+@media (min-width: 1300px) {
+  .container-fluid {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .nav-item {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+}
+
+.svg {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.svg:hover {
+  color:#891204;
+  fill: #891204;
+
+}
+.bg-light{
+    background-color: aliceblue !important;
+}
+.myBtn{
+    color: black;
+    font-weight: 500;
+}
