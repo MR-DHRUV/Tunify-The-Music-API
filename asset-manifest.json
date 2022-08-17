@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Tunify-The-Music-API/static/css/main.ccd93818.css",
+    "main.js": "/Tunify-The-Music-API/static/js/main.618081b4.js",
+    "static/media/README.md": "/Tunify-The-Music-API/static/media/README.460c47dcc0d163e22058.md",
+    "index.html": "/Tunify-The-Music-API/index.html",
+    "main.ccd93818.css.map": "/Tunify-The-Music-API/static/css/main.ccd93818.css.map",
+    "main.618081b4.js.map": "/Tunify-The-Music-API/static/js/main.618081b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccd93818.css",
+    "static/js/main.618081b4.js"
+  ]
+}
