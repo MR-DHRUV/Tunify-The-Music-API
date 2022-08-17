@@ -277,8 +277,7 @@
 
 For any issue or query I'll love to hear at : developer.authify@gmail.com
 
-**We love contributions ❤️** <br>Contribute to this api <a href="https://github.com/MR-DHRUV/Tunify-The-Music-API" target="_blank" rel="noopener noreferrer">here</a>
-
+**We love contributions ❤️** <br>
 
 ## Contact Me <br>
 
