@@ -1,3 +1,8 @@
+![Untitled design (2)](https://user-images.githubusercontent.com/96336775/185159368-5a1d3bd0-f8e9-489d-9bd9-48ecfaca155d.png)
+
+
+
+
 # Tunify : The Music API
 - A simple api where you can add your favourite music and help others to get into nirvana 🎵🎶
 
