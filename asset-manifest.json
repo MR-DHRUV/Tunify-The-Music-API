@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Tunify-The-Music-API/static/css/main.ccd93818.css",
-    "main.js": "/Tunify-The-Music-API/static/js/main.e5cee30b.js",
-    "static/media/README.md": "/Tunify-The-Music-API/static/media/README.460c47dcc0d163e22058.md",
+    "main.js": "/Tunify-The-Music-API/static/js/main.d864727f.js",
+    "static/media/README.md": "/Tunify-The-Music-API/static/media/README.c111f4f86583517a4d1d.md",
     "index.html": "/Tunify-The-Music-API/index.html",
     "main.ccd93818.css.map": "/Tunify-The-Music-API/static/css/main.ccd93818.css.map",
-    "main.e5cee30b.js.map": "/Tunify-The-Music-API/static/js/main.e5cee30b.js.map"
+    "main.d864727f.js.map": "/Tunify-The-Music-API/static/js/main.d864727f.js.map"
   },
   "entrypoints": [
     "static/css/main.ccd93818.css",
-    "static/js/main.e5cee30b.js"
+    "static/js/main.d864727f.js"
   ]
 }

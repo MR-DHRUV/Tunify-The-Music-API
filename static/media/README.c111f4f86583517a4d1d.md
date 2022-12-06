@@ -17,7 +17,7 @@
 
 
 ```js
-  POST https://api-tunify.herokuapp.com/user/new
+  POST https://api-tunify.azurewebsites.net/user/new
 ```
 
 #### Body (json) :
@@ -41,7 +41,7 @@
 ### Adding a song:
 
 ```js
-  POST https://api-tunify.herokuapp.com/music/new
+  POST https://api-tunify.azurewebsites.net/music/new
 ```
 
 #### Body (json) :
@@ -77,7 +77,7 @@
 ### Adding a playlist
 
 ```js
-  POST https://api-tunify.herokuapp.com/playlist/new
+  POST https://api-tunify.azurewebsites.net/playlist/new
 ```
 
 #### Body (json) :
@@ -107,7 +107,7 @@
 ### Get all songs corresponding to given API key
 
 ```js
-  POST https://api-tunify.herokuapp.com/user/music
+  POST https://api-tunify.azurewebsites.net/user/music
 ```
 
 #### Body (json) :
@@ -145,7 +145,7 @@
 ### Get all playlists corresponding to given API key
 
 ```js
-  POST https://api-tunify.herokuapp.com/user/playlist
+  POST https://api-tunify.azurewebsites.net/user/playlist
 ```
 
 #### Body (json) :
@@ -182,7 +182,7 @@
 ### Get all songs
 
 ```js
-  GET https://api-tunify.herokuapp.com/music/all
+  GET https://api-tunify.azurewebsites.net/music/all
 ```
 
 #### response
@@ -214,7 +214,7 @@
 ### Get all playlists
 
 ```js
-  GET https://api-tunify.herokuapp.com/playlist/all
+  GET https://api-tunify.azurewebsites.net/playlist/all
 ```
 
 
@@ -245,17 +245,17 @@
 
 **By name :** 
 ```js
-  POST https://api-tunify.herokuapp.com/music/search/{put song name here}
+  POST https://api-tunify.azurewebsites.net/music/search/{put song name here}
 ```
 
 **By artist :** 
 ```js
-  POST https://api-tunify.herokuapp.com/music/artist/{put artist name here}
+  POST https://api-tunify.azurewebsites.net/music/artist/{put artist name here}
 
 ```
 **By category :** 
 ```js
-  POST https://api-tunify.herokuapp.com/music/category/{put category  here}
+  POST https://api-tunify.azurewebsites.net/music/category/{put category  here}
 ```
 
 <hr>
@@ -264,12 +264,12 @@
 
 **By name :** 
 ```js
-  POST https://api-tunify.herokuapp.com/playlist/search/{put playlist name here}
+  POST https://api-tunify.azurewebsites.net/playlist/search/{put playlist name here}
 ```
 
 **By category :** 
 ```js
-  POST https://api-tunify.herokuapp.com/playlist/category/{put category  here}
+  POST https://api-tunify.azurewebsites.net/playlist/category/{put category  here}
 ```
 <hr>
 
